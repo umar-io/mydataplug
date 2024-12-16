@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.hero {
+  height: 100dvh;
+  background: url("./assets/gettyimages-1311610242-612x612.jpg");
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.bg-animate {
+  animation: moveLeftBounce 5s linear infinite;
+}
+
+.footercolorscheme {
+  background: #fa811c;
+  color: #fff;
+}
+
+.headercolorschemeonscroll {
+  background: linear-gradient(
+    to right,
+    rgba(255, 129, 0, 0.6),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+
+@keyframes moveLeftBounce {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.icon-animate {
+  animation: iconAnimation 3s linear infinite;
+}
+
+@keyframes iconAnimation {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover;
+    background-position: center;
+  }
+}
